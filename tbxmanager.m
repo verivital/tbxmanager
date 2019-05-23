@@ -803,7 +803,8 @@ if ~isempty(Toolbox.license.text)
 	fprintf('%s\n', Toolbox.license.text);
 	fprintf('%s\n', repmat('-', 1, 80));
 	fprintf('\n');
-	agreed = tbx_ask('Do you agree? [y/n]: ', mfilename, 'y', Toolbox);
+	%agreed = tbx_ask('Do you agree? [y/n]: ', mfilename, 'y', Toolbox);
+    agreed = 'y';
 	if isempty(agreed) || lower(agreed(1)) == 'n'
 		error('TBXMANAGER:BADCOMMAND', ...
 			'Cannot install "%s" without agreeing to its license.', ...
